@@ -186,17 +186,19 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script>
         let bins = [
-            { id: "S-001", name: "Taman Suropati", lat: -6.2001, lng: 106.8322, capacity: 25 },
-            { id: "S-002", name: "Stasiun Sudirman", lat: -6.2023, lng: 106.8236, capacity: 92 },
-            { id: "S-003", name: "Bundaran HI", lat: -6.1920, lng: 106.8227, capacity: 65 },
-            { id: "S-004", name: "Pasar Senen", lat: -6.1744, lng: 106.8444, capacity: 15 }
+            { id: "S-001", name: "Tugu Adipura", lat: -5.4216, lng: 105.2599, capacity: 25 },
+            { id: "S-002", name: "Mall Boemi Kedaton", lat: -5.3818, lng: 105.2504, capacity: 92 },
+            { id: "S-003", name: "PKOR Way Halim", lat: -5.3850, lng: 105.2810, capacity: 65 },
+            { id: "S-004", name: "Universitas Lampung", lat: -5.3643, lng: 105.2435, capacity: 15 }
         ];
 
         let map, markers = {}, currentRole = 'operator';
 
         function initMap() {
-            map = L.map('map', { zoomControl: false, scrollWheelZoom: false }).setView([-6.1950, 106.8300], 14);
-            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+            map = L.map('map', { zoomControl: false, scrollWheelZoom: false }).setView([-5.3971, 105.2668], 13);
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
             L.control.zoom({ position: 'bottomright' }).addTo(map);
             renderAll();
         }
